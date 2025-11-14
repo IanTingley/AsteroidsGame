@@ -1,14 +1,20 @@
 Spaceship KCR;
-
+Star [] Woodi;
 void keyPressed(){
   if(keyCode == UP){
-    KCR.accelerate(5);
+    KCR.accelerate(0.5);
+  }
+  if(keyCode == DOWN){
+    KCR.accelerate(-0.5);
   }
   if(keyCode == LEFT){
-    KCR.turn(5);
+    KCR.turn(-5);
   }
   if(keyCode == RIGHT){
-    KCR.turn(-5);
+    KCR.turn(5);
+  }
+  if(keyCode == SHIFT){
+    KCR.hyperspace();
   }
 
 }
@@ -16,14 +22,16 @@ void keyPressed(){
 void setup(){
   size(600,600);
   KCR = new Spaceship();
-  Star [] Woodi = new Star[50];
+  Woodi = new Star[200];
   for(int i = 0; i<Woodi.length; i++){
     Woodi[i] = new Star();
-    Woodi[i].show();
   }
 }
 void draw(){
   background(0);
+  for(int i = 0; i<Woodi.length; i++){
+    Woodi[i].show();
+  }
   KCR.show();
   KCR.move();
 }
