@@ -34,8 +34,11 @@ void setup(){
 }
 void draw(){
   background(0);
-  for(int i = 0; i<=25; i++){
-     Kenneth.get(i).move();
+  for(int i = 0; i<Kenneth.size(); i++){
+    Kenneth.get(i).move();
+    if(Kenneth.get(i).NearShip() == true){
+      Kenneth.remove(i);
+    }
   }
   for(int i = 0; i<Woodi.length; i++){
     Woodi[i].show();
