@@ -31,5 +31,7 @@ class Asteroid extends floater{
     super.show();
     super.move();
   }
-  
+  public boolean NearShip(){
+    return((myCenterX >= KCR.getX()-10) && (myCenterX <= KCR.getX()+10) && (myCenterY >= KCR.getY()-10) && (myCenterY <= KCR.getY()+10));
+  }
 }
