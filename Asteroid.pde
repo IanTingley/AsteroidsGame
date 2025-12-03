@@ -34,4 +34,10 @@ class Asteroid extends floater{
   public boolean NearShip(){
     return((myCenterX >= KCR.getX()-10) && (myCenterX <= KCR.getX()+10) && (myCenterY >= KCR.getY()-10) && (myCenterY <= KCR.getY()+10));
   }
+  public double getX(){
+    return myCenterX;
+  }
+  public double getY(){
+    return myCenterY;
+  }
 }
